@@ -44,7 +44,7 @@ class Cat:
         self.end_of_day()
 
 
-nyavchyk = (name="nyavchyk")
+nyavchyk = Cat(name="Nyavchyk")
 for day in range(365):
     if nyavchyk.alive == False:
         break
