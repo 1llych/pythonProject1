@@ -20,10 +20,10 @@ class Cat:
         self.fatigue - + 0.1
     def is_alive(self):
         if self.fatigue < -0.5:
-            print("Cast out...")
+            print("tired...")
             self.alive = False
         elif self.satiety <= 0:
-            print("Depression...")
+            print("hungry...")
             self.alive = False
         elif self.fatigue > 5:
             print("Passed externally...")
@@ -36,7 +36,7 @@ class Cat:
         print(f"{day:=^50}")
         live_cube = random.randint(1, 3)
         if live_cube == 1:
-            self.to_study()
+            self.to_hunting()
         elif live_cube == 2:
             self.to_sleep()
         elif live_cube == 3:
