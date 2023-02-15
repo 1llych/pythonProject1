@@ -1,6 +1,6 @@
 import random
 class Human:
-    def __init__(self, name="Human", job=None, home=None, car=None):
+    def __init__(self, name="Human", job=None, home=None, car=None, pet=None):
         self.name = name
         self.money = 100
         self.gladness = 50
@@ -8,7 +8,7 @@ class Human:
         self.job = job
         self.car = car
         self.home = home
-        self.pet = Pet
+        self.pet = pet
 
     def get_home(self):
         self.home = House()
@@ -17,7 +17,7 @@ class Human:
         self.car = Auto(brands_of_car)
 
     def get_pet(self):
-        self.pet = Pet()
+        self.pet = Pet(pet_list)
 
 
     def get_job(self):
@@ -90,6 +90,10 @@ class Human:
     def days_indexes(self, day):
         day = f" Today the {day} of {self.name}'s life "
         print(f"{day:=^50}", "\n")
+        pet_indexes = f"{self.pet} pet indexes"
+        print(f"{pet_indexes:^50}", "\n")
+        print(f"Energy – {self.pet.energy}")
+        print(f"Eat – {self.pet.eat}")
         human_indexes = self.name + "'s indexes"
         print(f"{human_indexes:^50}", "\n")
         print(f"Money – {self.money}")
@@ -123,7 +127,7 @@ class Human:
             self.get_home()
         if self.pet is None:
             self.get_pet()
-            print(f"I bought a pet{self.cat}")
+            print(f"I bought a pet{self.pet}")
         if self.car is None:
             self.get_car()
             print(f"I bought a car{self.car.brand}")
