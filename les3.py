@@ -8,12 +8,16 @@ class Human:
         self.job = job
         self.car = car
         self.home = home
+        self.pet = Pet
 
     def get_home(self):
         self.home = House()
 
     def get_car(self):
         self.car = Auto(brands_of_car)
+
+    def get_pet(self):
+        self.pet = Pet()
 
 
     def get_job(self):
@@ -117,6 +121,9 @@ class Human:
         if self.home is None:
             print("Settled in the house")
             self.get_home()
+        if self.pet is None:
+            self.get_pet()
+            print(f"I bought a pet{self.cat}")
         if self.car is None:
             self.get_car()
             print(f"I bought a car{self.car.brand}")
@@ -183,6 +190,19 @@ class House:
     def __init__(self):
         self.mess = 0
         self.food = 0
+pet_list = {
+    "dvornyaga dog":{"energy":4, "eat":2},
+    "alabay dog":{"energy":2, "eat":4},
+    "cat":{"energy": 1, "eat": 4},
+}
+class Pet:
+    def __init__(self, pet_list):
+        self.pet=random.choice(list(pet_list))
+        self.energy=pet_list[self.pet]["energy"]
+        self.pet=pet_list[self.pet]["eat"]
+    def self_to_care(self):
+        self.gladness -= self.energy
+        self.home_food -= self.eat
 
 job_list = {
  "Java developer":
