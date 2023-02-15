@@ -90,7 +90,7 @@ class Human:
     def days_indexes(self, day):
         day = f" Today the {day} of {self.name}'s life "
         print(f"{day:=^50}", "\n")
-        pet_indexes = f"{self.pet} pet indexes"
+        pet_indexes = f"{self.pet}" + "'s indexes"
         print(f"{pet_indexes:^50}", "\n")
         print(f"Energy – {self.pet.energy}")
         print(f"Eat – {self.pet.eat}")
@@ -203,7 +203,7 @@ class Pet:
     def __init__(self, pet_list):
         self.pet=random.choice(list(pet_list))
         self.energy=pet_list[self.pet]["energy"]
-        self.pet=pet_list[self.pet]["eat"]
+        self.eat=pet_list[self.pet]["eat"]
     def self_to_care(self):
         self.gladness -= self.energy
         self.home_food -= self.eat
